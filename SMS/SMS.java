@@ -1,6 +1,11 @@
 import java.util.Scanner;
 
-public class SMS{
+/**
+ * Reads an SMS message from the user and calculates how many characters
+ * are used and how many remain out of the standard 160-character SMS limit.
+ * Alerts the user if the message exceeds the limit.
+ */
+public class SMS {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -8,7 +13,7 @@ public class SMS{
         System.out.print("Enter your SMS: ");
         String input = sc.nextLine();
 
-        // Using StringBuilder
+        // Use StringBuilder to easily obtain the character count
         StringBuilder sms = new StringBuilder(input);
 
         int charactersUsed = sms.length();

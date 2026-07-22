@@ -1,5 +1,9 @@
 import java.util.Scanner;
 
+/**
+ * Reads a list of names from the user and sorts them alphabetically
+ * using the Bubble Sort algorithm with String comparison.
+ */
 public class NameSort {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -10,15 +14,15 @@ public class NameSort {
         String names[] = new String[n];
 
         System.out.println("Enter names:");
-
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             names[i] = sc.next();
         }
 
-        // Bubble Sort
-        for(int i = 0; i < n - 1; i++) {
-            for(int j = 0; j < n - 1 - i; j++) {
-                if(names[j].compareTo(names[j + 1]) > 0) {
+        // Bubble sort: compare adjacent names and swap if out of alphabetical order
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - 1 - i; j++) {
+                // compareTo returns positive if names[j] > names[j+1]
+                if (names[j].compareTo(names[j + 1]) > 0) {
                     String temp = names[j];
                     names[j] = names[j + 1];
                     names[j + 1] = temp;
@@ -27,8 +31,7 @@ public class NameSort {
         }
 
         System.out.println("Names in Alphabetical Order:");
-
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             System.out.println(names[i]);
         }
     }
