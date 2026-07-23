@@ -1,3 +1,6 @@
+/**
+ * Base class representing a generic employee with a name and base salary.
+ */
 class Employee {
     String name;
     double baseSalary;
@@ -8,6 +11,9 @@ class Employee {
     }
 }
 
+/**
+ * Intermediate class extending Employee, adding a bonus component.
+ */
 class Manager extends Employee {
     double bonus;
 
@@ -17,6 +23,10 @@ class Manager extends Employee {
     }
 }
 
+/**
+ * Most derived class extending Manager, adding a performance incentive.
+ * Demonstrates multilevel inheritance: Employee -> Manager -> SeniorManager.
+ */
 class SeniorManager extends Manager {
     double performanceIncentive;
 
@@ -25,11 +35,16 @@ class SeniorManager extends Manager {
         this.performanceIncentive = performanceIncentive;
     }
 
+    /** Calculates total salary by summing all salary components. */
     double getTotalSalary() {
         return baseSalary + bonus + performanceIncentive;
     }
 }
 
+/**
+ * Demonstrates multilevel inheritance by creating a SeniorManager
+ * and displaying all salary components.
+ */
 public class InheritanceMultiLevel {
     public static void main(String[] args) {
         SeniorManager sm = new SeniorManager("Harkeerat", 50000, 10000, 5000);

@@ -1,12 +1,17 @@
 import java.util.Scanner;
 
+/**
+ * Reads a number as a string from the user and prints each digit
+ * as its corresponding English word (e.g., "123" becomes "One Two Three").
+ */
 public class NumToString {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter a number: ");
-        String num = sc.next();   // Take input as a String
+        String num = sc.next();
 
+        // Iterate through each character and convert to word form
         for (int i = 0; i < num.length(); i++) {
             char digit = num.charAt(i);
 

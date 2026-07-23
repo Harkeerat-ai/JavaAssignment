@@ -1,5 +1,9 @@
 import java.util.Scanner;
 
+/**
+ * Reads a 2D array and a target number from the user, then searches for
+ * the target in the array and prints its coordinates if found.
+ */
 public class TwoDArraySearch {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -22,6 +26,7 @@ public class TwoDArraySearch {
         System.out.print("Enter the number to search: ");
         int target = sc.nextInt();
 
+        // Linear search through each element of the 2D array
         boolean found = false;
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
